@@ -24,9 +24,8 @@ The newly implemented website met its stated goals, with the addition of a blog 
 
 ## Lessons & Future Prospects
 
-This project solidified the notion that **Nuxt3 and Strapi are excellent choices for developing websites rooted in JAMstack architecture**. While all initial objectives have been met, there's potential in the future to integrate a chatbot, possibly leveraging technology like ChatGPT.
+This project solidified the notion that **Nuxt3 and Nuxt Content v2 are excellent choices for developing websites rooted in JAMstack architecture**. While all initial objectives have been met, there's potential in the future to integrate a chatbot, possibly leveraging technology like ChatGPT.
 
 ## Conclusion
 
 iText Translation Agency's website ([https://itext.agency](https://itext.agency/)) stands as a testament to the power of combining Nuxt3 and Strapi for a high-performance, tailored user experience. With substantial improvements in bounce and conversion rates, the platform showcases how modern technologies can significantly elevate an online presence.# itext-nuxt-content
-# itext-content-v2
