@@ -32,7 +32,9 @@
 
       <SectionFooter />
 
-      <ButtonBottom> {{ t("button") }}</ButtonBottom>
+      <ButtonPrimary class="fixed mx-auto bottom-4 left-0 right-0 md:hidden">
+        {{ t("button") }}</ButtonPrimary
+      >
     </Html>
   </div>
 </template>
