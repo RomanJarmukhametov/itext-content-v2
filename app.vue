@@ -14,7 +14,7 @@ watch(locale, (newLocale) => {
 const businessData = {
   name: "itext.agency",
   telephone: "+7-7182-76-40-60", 
-  logo: "https://itext.agency/images/logo.svg",
+  logo: "https://itext.agency/images/itext_logo.svg",
 };
 
 // Address data
