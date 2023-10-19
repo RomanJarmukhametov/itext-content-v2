@@ -8,8 +8,8 @@
     <div class="flex flex-col items-center">
       <NuxtLink to="tel:+77182764060">
         <svg
-          width="32px"
-          height="32px"
+          width="48px"
+          height="48px"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -33,8 +33,8 @@
         rel="noopener noreferrer"
       >
         <svg
-          width="32px"
-          height="32px"
+          width="48px"
+          height="48px"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -57,8 +57,8 @@
     <div class="flex flex-col items-center">
       <NuxtLink to="mailto:itext@itext.kz">
         <svg
-          width="32px"
-          height="32px"
+          width="48px"
+          height="48px"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
