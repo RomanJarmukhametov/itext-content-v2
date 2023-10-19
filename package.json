@@ -34,6 +34,7 @@
     "@nuxtjs/robots": "^3.0.0",
     "@vercel/analytics": "^1.0.2",
     "@vueuse/motion": "^2.0.0",
+    "rss": "^1.2.2",
     "sitemap": "^7.1.1"
   }
 }
