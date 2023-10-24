@@ -6,6 +6,12 @@
   const { t } = useI18n({
     useScope: "local",
   });
+
+  useHead({
+    titleTemplate: (titleChunk) => {
+      return titleChunk ? `${titleChunk} | itext.agency` : "itext.agency";
+    },
+  });
 </script>
 <template>
   <main>
