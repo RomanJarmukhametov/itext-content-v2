@@ -81,11 +81,7 @@
   //Import useLocalePath to get the locale path
   const localPath = useLocalePath();
 
-  // Define endpoint for the form depending on the locale
-
   let userLang;
-  const endpoint = "https://formspree.io/f/xdojvazp";
-
   if (currentLocale.value === "ru") {
     userLang = "Russian";
   } else {
@@ -93,32 +89,34 @@
   }
 
   //Define the form fields
-
   const submitted = ref(false);
   const submittedName = ref("");
+  const gotcha = ref("");
+
+  //Define endpoint for the local API
+  const endpoint = "/api/submitForm";
 
   //Submit the form
   const submitHandler = async (formData) => {
-    // Create a new FormData object
-    const data = new FormData();
-
-    data.append("name", formData.name);
-    data.append("email", formData.email);
-    data.append("message", formData.message);
-    data.append("phone", formData.phone);
-    data.append(
-      "_subject",
-      "New translation request from " +
-        formData.name +
-        " who speaks " +
-        userLang
-    );
-
     try {
+      // Create a JSON object with the form data
+      const data = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        language: userLang, // Add the language directly here
+        subject: `New translation request from ${formData.name} who speaks ${userLang}`,
+        _gotcha: gotcha.value, // Include the honeypot field value
+      };
+
       const response = await fetch(endpoint, {
         method: "POST",
-        body: data, // using `data` here
-        headers: { Accept: "application/json" },
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
       });
 
       if (response.ok) {
@@ -134,7 +132,7 @@
         throw new Error("Form submission failed.");
       }
     } catch (error) {
-      console.error("Error submitting to Formspree:", error);
+      console.error("Error submitting the form:", error);
     }
   };
 
@@ -274,8 +272,16 @@
             />
           </div>
 
-          <!-- Formspree honeypot anti-spam protection -->
-          <input type="text" name="_gotcha" style="display: none" />
+          <!-- Honeypot anti-spam protection -->
+          <input
+            type="text"
+            name="_gotcha"
+            autocomplete="off"
+            tabindex="-1"
+            aria-hidden="true"
+            v-model="gotcha"
+            style="display: none"
+          />
         </FormKit>
       </div>
     </div>
